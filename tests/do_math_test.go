@@ -1,7 +1,7 @@
 package tests
 
 import (
-	"github.com/ediallocyf/math-skills/api"
+	"github.com/ediallocyf/math-skills/app"
 	"testing"
 )
 
@@ -14,7 +14,7 @@ func TestDoMath(t *testing.T) {
 		a := 20
 		b := 5
 		// -------ACT--------
-		outNum := api.DoMath(a, b)
+		outNum := app.DoMath(a, b)
 		// ------expectation------
 		expNum := 4
 		assertDoMath(t, outNum, expNum)

@@ -1,7 +1,7 @@
 package tests
 
 import (
-	"github.com/ediallocyf/math-skills/api"
+	"github.com/ediallocyf/math-skills/app"
 	"github.com/ediallocyf/math-skills/util"
 	"log"
 	"sort"
@@ -33,7 +33,7 @@ func TestMedian(t *testing.T) {
 			sort.Float64s(dataArr)
 			n := len(dataArr)
 			if n%2 == 0 {
-				outNum = api.Median(string(dataArr[n/2-1]))
+				outNum = app.Median(string(dataArr[n/2-1]))
 			}
 		}
 		// -------ACT--------
