@@ -2,42 +2,27 @@ package util
 
 import (
 	"io"
+	"log"
 	"os"
 )
 
 func ReadFileToStr(filePath string) (string, error) {
 	f, err := os.Open(filePath)
 	if err != nil {
-		return "Error Opening file", err
+		return "", err
 	}
 	defer func(f *os.File) {
 		err := f.Close()
 		if err != nil {
-
+			// Handle the error when closing the file
+			log.Printf("Error closing file: %v", err)
 		}
 	}(f)
 
-	//dataArr := make([]string, 0)
-
 	data, err := io.ReadAll(f)
 	if err != nil {
-		return "Error Reading file", err
+		return "", err
 	}
 
-	//for _, line := range strings.Split(string(data), "\n") {
-	//	dataArr = append(dataArr, line)
-	//}
 	return string(data), nil
 }
-
-//func ConvertToStrArr() ([]string, error) {
-//
-//	data, err := ReadFileToStr("data.txt")
-//	if err != nil {
-//		return nil, err
-//	}
-//	dataArr := make([]string, 0)
-//	for i, line := range strings.Split(string(data), "\n") {
-//		dataArr = append(dataArr, line)
-//	}
-//}

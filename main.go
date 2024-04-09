@@ -19,6 +19,12 @@ func main() {
 	}
 
 	fmt.Println(data)
-	average := api.Average()
+	average := api.Average("data.text")
 	fmt.Println("average", average)
+	median := api.Median("data.txt")
+	fmt.Println("median", median)
+	variance := api.Variance("data.txt")
+	fmt.Println("variance", variance)
+	StandardDeviation := api.StandardDeviation("data.txt")
+	fmt.Println("Standard_Deviation", StandardDeviation)
 }
